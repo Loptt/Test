@@ -7,7 +7,6 @@ int main()
     sf::RenderWindow window(sf::VideoMode(512, 512), "Tower Defense", sf::Style::Close | sf::Style::Titlebar);
 
     Player player1;
-    Animation animation;
 
     while(window.isOpen())
     {
@@ -25,6 +24,8 @@ int main()
         window.clear(sf::Color::White);
         window.draw(player1.getBody());
         window.display();
+
+        //This is a comment
     }
 
     return 0;
