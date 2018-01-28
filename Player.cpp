@@ -4,13 +4,21 @@
 
 #include "Player.h"
 
-Player::Player()
+Player::Player(sf::Vector2f size, sf::Vector2f position, sf::Vector2u imageCount, float switchTime)
 {
-    body.setSize(sf::Vector2f(100.0,100.0));
-    body.setPosition(sf::Vector2f(200.0,200.0));
+    body.setSize(size);
+    body.setPosition(position);
 
-    playerTexture.loadFromFile("player_texture.png");
+    playerTexture.loadFromFile("images/tux_from_linux.png");
     body.setTexture(&playerTexture);
+
+    animation.setImageCount(imageCount);
+    animation.setSwitchTime(switchTime);
+
+    animation.textureRect.width  = playerTexture.getSize().x / imageCount.x;
+    animation.textureRect.height = playerTexture.getSize().y / imageCount.y;
+
+
 }
 
 Player::~Player()
@@ -45,3 +53,9 @@ void Player::move()
         body.move(sf::Vector2f(0.0,0.1));
     }
 }
+
+void Player::updateTextureRect()
+{
+    body.setTextureRect(animation.textureRect);
+}
+

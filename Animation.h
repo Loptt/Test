@@ -11,8 +11,18 @@ class Animation
 {
 public:
 
+    //Constructors and Destructors
     Animation(sf::Texture *texture, sf::Vector2u imageCount, float switchTime);
+    Animation();
     ~Animation();
+
+    //Setters
+    void setImageCount(sf::Vector2u imageCount);
+    void setCurrentImage(sf::Vector2u currentImage);
+    void setTotalTime(float totalTime);
+    void setSwitchTime(float switchTime);
+
+    void update(unsigned int row, float deltaTime);
 
     sf::IntRect textureRect;
 
