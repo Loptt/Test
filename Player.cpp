@@ -59,3 +59,8 @@ void Player::updateTextureRect()
     body.setTextureRect(animation.textureRect);
 }
 
+void Player::updateAnimation(unsigned int row, float deltaTime)
+{
+    animation.update(row, deltaTime);
+}
+

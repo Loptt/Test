@@ -19,6 +19,7 @@ public:
 
     void move();
     void updateTextureRect();
+    void updateAnimation(unsigned int, float);
 
     Animation animation;
 

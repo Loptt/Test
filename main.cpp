@@ -22,6 +22,7 @@ int main()
         deltaTime = clock.restart().asSeconds();
 
         sf::Event evnt;
+
         while(window.pollEvent(evnt))
         {
             if(evnt.type == evnt.Closed)
@@ -30,7 +31,7 @@ int main()
             }
         }
 
-        player1.animation.update(0, deltaTime);
+        player1.updateAnimation(0, deltaTime);
         player1.updateTextureRect();
         player1.move();
 
