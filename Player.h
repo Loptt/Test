@@ -12,21 +12,22 @@ class Player
 {
 public:
 
-    Player(sf::Vector2f, sf::Vector2f, sf::Vector2u, float);
+    Player(sf::Vector2f, sf::Vector2f, sf::Vector2u, float, float);
     ~Player();
 
     sf::RectangleShape getBody();
 
-    void move();
-    void updateTextureRect();
-    void updateAnimation(unsigned int, float);
-
-    Animation animation;
+    void update();
 
 private:
 
     sf::RectangleShape body;
     sf::Texture playerTexture;
+    float speed;
+    unsigned int row;
+    bool faceRight;
+
+    Animation animation;
 
 
 
